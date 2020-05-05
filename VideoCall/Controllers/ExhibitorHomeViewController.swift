@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class ExhibitorHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
