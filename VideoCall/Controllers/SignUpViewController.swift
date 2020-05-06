@@ -108,7 +108,7 @@ class SignUpViewController: UIViewController {
                         }
                     }
 //                 transition in home screen
-                    Database.database().reference().child("users/\(result!.user.uid)/role").observeSingleEvent(of: .value) { (snapshot) in
+                    Database.database().reference().child("users/document/role").observeSingleEvent(of: .value) { (snapshot) in
                         switch snapshot.value as! String {
                         case "Exhibitor":
                             self.exhibitorTransitionToHome()
