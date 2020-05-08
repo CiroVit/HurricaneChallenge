@@ -10,6 +10,9 @@
 		400FC95524619EDE00F038EA /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FC95424619EDE00F038EA /* Storyboards.swift */; };
 		400FC9572461B58200F038EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 400FC9562461B58200F038EA /* GoogleService-Info.plist */; };
 		400FC9592465BB2800F038EA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FC9582465BB2800F038EA /* TabBarViewController.swift */; };
+		400FC95B2465BFA600F038EA /* eventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FC95A2465BFA600F038EA /* eventsViewController.swift */; };
+		400FC95D2465BFD100F038EA /* MyRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FC95C2465BFD100F038EA /* MyRoomsViewController.swift */; };
+		400FC95F2465BFE200F038EA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FC95E2465BFE200F038EA /* SettingsViewController.swift */; };
 		40D7B7BB246166AF008E138F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D7B7BA246166AF008E138F /* AppDelegate.swift */; };
 		40D7B7BD246166AF008E138F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D7B7BC246166AF008E138F /* SceneDelegate.swift */; };
 		40D7B7BF246166AF008E138F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D7B7BE246166AF008E138F /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 		400FC95424619EDE00F038EA /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		400FC9562461B58200F038EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		400FC9582465BB2800F038EA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		400FC95A2465BFA600F038EA /* eventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventsViewController.swift; sourceTree = "<group>"; };
+		400FC95C2465BFD100F038EA /* MyRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomsViewController.swift; sourceTree = "<group>"; };
+		400FC95E2465BFE200F038EA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		40D7B7B7246166AF008E138F /* VideoCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D7B7BA246166AF008E138F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40D7B7BC246166AF008E138F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,10 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				40D7B7BE246166AF008E138F /* ViewController.swift */,
+				400FC9582465BB2800F038EA /* TabBarViewController.swift */,
 				40D7B7D024617002008E138F /* SignUpViewController.swift */,
 				40D7B7D224617018008E138F /* LoginViewController.swift */,
 				40D7B7D524617062008E138F /* ExhibitorHomeViewController.swift */,
-				400FC9582465BB2800F038EA /* TabBarViewController.swift */,
+				400FC95A2465BFA600F038EA /* eventsViewController.swift */,
+				400FC95C2465BFD100F038EA /* MyRoomsViewController.swift */,
+				400FC95E2465BFE200F038EA /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -247,12 +256,15 @@
 				40D7B7D924617B46008E138F /* Utility.swift in Sources */,
 				40D7B7BF246166AF008E138F /* ViewController.swift in Sources */,
 				40D7B7BB246166AF008E138F /* AppDelegate.swift in Sources */,
+				400FC95D2465BFD100F038EA /* MyRoomsViewController.swift in Sources */,
 				40D7B7D124617002008E138F /* SignUpViewController.swift in Sources */,
 				400FC9592465BB2800F038EA /* TabBarViewController.swift in Sources */,
+				400FC95B2465BFA600F038EA /* eventsViewController.swift in Sources */,
 				40D7B7D324617018008E138F /* LoginViewController.swift in Sources */,
 				40D7B7BD246166AF008E138F /* SceneDelegate.swift in Sources */,
 				400FC95524619EDE00F038EA /* Storyboards.swift in Sources */,
 				40D7B7D624617062008E138F /* ExhibitorHomeViewController.swift in Sources */,
+				400FC95F2465BFE200F038EA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

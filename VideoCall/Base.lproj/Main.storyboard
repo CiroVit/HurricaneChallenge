@@ -231,7 +231,7 @@
             </objects>
             <point key="canvasLocation" x="1847.826086956522" y="-178.125"/>
         </scene>
-        <!--Item-->
+        <!--Meetings-->
         <scene sceneID="IbN-j7-pgz">
             <objects>
                 <viewController id="KQg-yQ-LK4" customClass="ExhibitorHomeViewController" customModule="VideoCall" customModuleProvider="target" sceneMemberID="viewController">
@@ -250,55 +250,55 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Xud-QX-WfJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7S7-jE-OMD"/>
+                    <tabBarItem key="tabBarItem" title="Meetings" image="meeting001" id="7S7-jE-OMD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Vn-tO-Rce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3026" y="290"/>
         </scene>
-        <!--Item-->
+        <!--events-->
         <scene sceneID="flW-SG-fj1">
             <objects>
-                <viewController id="P3A-fa-oq7" customClass="ExhibitorHomeViewController" customModule="VideoCall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P3A-fa-oq7" customClass="eventsViewController" customModule="VideoCall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="904-eG-ciO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="A78-i5-lZ5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="BwC-T0-kgM"/>
+                    <tabBarItem key="tabBarItem" title="events" image="events" id="BwC-T0-kgM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCT-Nw-TEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3779" y="292"/>
         </scene>
-        <!--Item-->
+        <!--my rooms-->
         <scene sceneID="ZtX-Nc-LVQ">
             <objects>
-                <viewController id="yD3-dc-myD" customClass="ExhibitorHomeViewController" customModule="VideoCall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yD3-dc-myD" customClass="MyRoomsViewController" customModule="VideoCall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4ns-hD-BT1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zNa-dq-ft2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Xdb-Yc-dup"/>
+                    <tabBarItem key="tabBarItem" title="my rooms" image="rooms" id="Xdb-Yc-dup"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bng-is-JIQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4511" y="294"/>
         </scene>
-        <!--Item-->
+        <!--settings-->
         <scene sceneID="mgX-Fa-GaS">
             <objects>
-                <viewController id="oFX-be-xn5" sceneMemberID="viewController">
+                <viewController id="oFX-be-xn5" customClass="SettingsViewController" customModule="VideoCall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QIb-iY-lUC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dyD-Ii-dfy"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="nCk-2c-NkC"/>
+                    <tabBarItem key="tabBarItem" title="settings" image="settings" id="nCk-2c-NkC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0F-Di-hnG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,4 +345,10 @@
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="events" width="30" height="30"/>
+        <image name="meeting001" width="30" height="30"/>
+        <image name="rooms" width="30" height="30"/>
+        <image name="settings" width="30" height="30"/>
+    </resources>
 </document>
