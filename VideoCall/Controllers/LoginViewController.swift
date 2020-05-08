@@ -76,6 +76,7 @@ class LoginViewController: UIViewController {
                 self.ShowError("Wrong email or password")
             }else {
                 self.TransitionToHome()
+               
             }
         }
         

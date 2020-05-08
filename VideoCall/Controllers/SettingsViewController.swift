@@ -7,26 +7,44 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
-
+    @IBOutlet weak var LogOutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(red: 3/255, green: 66/255, blue: 119/255, alpha: 1)
-
+      setUpButton()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func TransitionToHome() {
+        let userHomeViewController =
+            storyboard?.instantiateViewController(identifier: Storyboards.Storyboard.ViewController) as? ViewController
+        
+        view.window?.rootViewController = userHomeViewController
+        view.window?.makeKeyAndVisible()
     }
-    */
+    
+    
+    func setUpButton(){
+        Utility.filledButton(LogOutButton)
+    }
 
-}
+    @IBAction func LogOutButtonTapped(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            
+                  self.TransitionToHome()
+            
+                  } catch {
+                      print(error.localizedDescription)
+                  }
+
+           }
+        
+    }
+

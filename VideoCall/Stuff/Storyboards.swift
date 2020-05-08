@@ -11,5 +11,6 @@ import Foundation
 struct Storyboards {
     struct Storyboard {
         static let TabBarViewController = "ExhibitorHVC"
+        static let ViewController = "HomeHVC"
     }
 }

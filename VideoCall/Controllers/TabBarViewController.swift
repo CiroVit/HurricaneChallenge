@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
     
@@ -18,7 +20,8 @@ class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
         hideTabBorder()
         
     }
-    
+//    check users logged in
+
     let CustomTabBar: UIView =  {
         let view = UIView(frame: .zero)
         view.backgroundColor = .white
@@ -56,6 +59,13 @@ class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
         tabBar.backgroundImage = UIImage.from(color: .clear)
         tabBar.shadowImage = UIImage()
         tabBar.clipsToBounds = true
+    }
+    func TransitionToHome() {
+        let userHomeViewController =
+            storyboard?.instantiateViewController(identifier: Storyboards.Storyboard.ViewController) as? ViewController
+        
+        view.window?.rootViewController = userHomeViewController
+        view.window?.makeKeyAndVisible()
     }
     
     

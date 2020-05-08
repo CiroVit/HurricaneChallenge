@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VideoCall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeHVC" id="BYZ-38-t0r" customClass="ViewController" customModule="VideoCall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,10 +295,35 @@
                     <view key="view" contentMode="scaleToFill" id="QIb-iY-lUC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tHp-Vm-bmK">
+                                <rect key="frame" x="40" y="763" width="334" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TJ-ad-Lkq">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="egj-sx-0ti"/>
+                                        </constraints>
+                                        <state key="normal" title="LogOut"/>
+                                        <connections>
+                                            <action selector="LogOutButtonTapped:" destination="oFX-be-xn5" eventType="touchUpInside" id="Jvh-3C-CLo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tHp-Vm-bmK" firstAttribute="bottom" secondItem="dyD-Ii-dfy" secondAttribute="bottom" id="cKs-RO-D48"/>
+                            <constraint firstItem="dyD-Ii-dfy" firstAttribute="trailing" secondItem="tHp-Vm-bmK" secondAttribute="trailing" constant="40" id="mWL-1I-SAC"/>
+                            <constraint firstItem="tHp-Vm-bmK" firstAttribute="leading" secondItem="dyD-Ii-dfy" secondAttribute="leading" constant="40" id="uKT-4g-60a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dyD-Ii-dfy"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="settings" image="settings" id="nCk-2c-NkC"/>
+                    <connections>
+                        <outlet property="LogOutButton" destination="3TJ-ad-Lkq" id="mo5-tN-Hb0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0F-Di-hnG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
