@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		400FC95324619DF200F038EA /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FC95224619DF200F038EA /* UserHomeViewController.swift */; };
 		400FC95524619EDE00F038EA /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FC95424619EDE00F038EA /* Storyboards.swift */; };
 		400FC9572461B58200F038EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 400FC9562461B58200F038EA /* GoogleService-Info.plist */; };
 		40D7B7BB246166AF008E138F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D7B7BA246166AF008E138F /* AppDelegate.swift */; };
@@ -24,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		400FC95224619DF200F038EA /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
 		400FC95424619EDE00F038EA /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		400FC9562461B58200F038EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40D7B7B7246166AF008E138F /* VideoCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +103,6 @@
 				40D7B7BE246166AF008E138F /* ViewController.swift */,
 				40D7B7D024617002008E138F /* SignUpViewController.swift */,
 				40D7B7D224617018008E138F /* LoginViewController.swift */,
-				400FC95224619DF200F038EA /* UserHomeViewController.swift */,
 				40D7B7D524617062008E138F /* ExhibitorHomeViewController.swift */,
 			);
 			path = Controllers;
@@ -251,7 +248,6 @@
 				40D7B7D324617018008E138F /* LoginViewController.swift in Sources */,
 				40D7B7BD246166AF008E138F /* SceneDelegate.swift in Sources */,
 				400FC95524619EDE00F038EA /* Storyboards.swift in Sources */,
-				400FC95324619DF200F038EA /* UserHomeViewController.swift in Sources */,
 				40D7B7D624617062008E138F /* ExhibitorHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

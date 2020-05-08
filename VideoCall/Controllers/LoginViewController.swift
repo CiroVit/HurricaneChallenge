@@ -22,8 +22,16 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        SetUpButtons()
     }
+    
+    func SetUpButtons() {
+        self.view.backgroundColor = UIColor.init(red: 3/255, green: 66/255, blue: 119/255, alpha: 1)
+        Utility.TextFields(EmailTF)
+        Utility.TextFields(PasswordTF)
+        Utility.filledButton(LoginButton)
+    }
+    
     func Validate() -> String? {
     
     if EmailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -41,6 +49,13 @@ class LoginViewController: UIViewController {
            ErrorLabel.text = message
            ErrorLabel.alpha = 1
        }
+    func TransitionToHome() {
+           let userHomeViewController =
+               storyboard?.instantiateViewController(identifier: Storyboards.Storyboard.ExhibitorHomeViewController) as? ExhibitorHomeViewController
+           
+           view.window?.rootViewController = userHomeViewController
+           view.window?.makeKeyAndVisible()
+       }
     
     
     @IBAction func LoginTapped(_ sender: Any) {
@@ -55,12 +70,12 @@ class LoginViewController: UIViewController {
         let email = EmailTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = PasswordTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        
+//        signin
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
                 self.ShowError("Wrong email or password")
             }else {
-                
+                self.TransitionToHome()
             }
         }
         

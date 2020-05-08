@@ -26,19 +26,21 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var ErrorLabel: UILabel!
     
-    @IBOutlet weak var pickerTF: UITextField!
-    
     @IBOutlet weak var imputTF: UILabel!
-    
-    var ChosedRole : String?
-    
-    var Roles = ["Exhibitor","visitor"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
    // Do any additional setup after loading the view.
-        createPickerView()
-        dismissPickerView()
+        SetUpButtons()
+    }
+    
+    func SetUpButtons() {
+        self.view.backgroundColor = UIColor.init(red: 3/255, green: 66/255, blue: 119/255, alpha: 1)
+        Utility.filledButton(SignUPButton)
+        Utility.TextFields(NameTF)
+        Utility.TextFields(SurnameTF)
+        Utility.TextFields(EmailTF)
+        Utility.TextFields(passwordTF)
     }
     
 //    Check and validate user data
@@ -47,8 +49,7 @@ class SignUpViewController: UIViewController {
         if NameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             SurnameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             EmailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            pickerTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+            passwordTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
                 {
             return "please fill all the fields"
         }
@@ -65,20 +66,14 @@ class SignUpViewController: UIViewController {
         ErrorLabel.alpha = 1
     }
   
-    func userTransitionToHome() {
+    func TransitionToHome() {
         let userHomeViewController =
-            storyboard?.instantiateViewController(identifier: Storyboards.Storyboard.UserHomeViewController) as? UserHomeViewController
+            storyboard?.instantiateViewController(identifier: Storyboards.Storyboard.ExhibitorHomeViewController) as? ExhibitorHomeViewController
         
         view.window?.rootViewController = userHomeViewController
         view.window?.makeKeyAndVisible()
     }
     
-    func exhibitorTransitionToHome() {
-         let exhibitorHomeViewController = storyboard?.instantiateViewController(identifier: Storyboards.Storyboard.ExhibitorHomeViewController) as? ExhibitorHomeViewController
-        
-        view.window?.rootViewController = exhibitorHomeViewController
-        view.window?.makeKeyAndVisible()
-    }
     
     @IBAction func SignUpTapped(_ sender: Any) {
 //        validate
@@ -93,7 +88,6 @@ class SignUpViewController: UIViewController {
             let surname = SurnameTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = EmailTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let role = pickerTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             //        create user in DB
             Auth.auth().createUser(withEmail: email , password: password) { (result, err) in
@@ -102,70 +96,21 @@ class SignUpViewController: UIViewController {
                     self.ShowError("error creating user")
                 }else {
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["name" : Name, "role" : role, "surname" : surname , "uid" : result!.user.uid]) { (error) in
+                    db.collection("users").addDocument(data: ["name" : Name, "surname" : surname , "uid" : result!.user.uid]) { (error) in
                         if error != nil {
                             self.ShowError("error saving user data")
                         }
                     }
 //                 transition in home screen
-                    Database.database().reference().child("users/document/role").observeSingleEvent(of: .value) { (snapshot) in
-                        switch snapshot.value as! String {
-                        case "Exhibitor":
-                            self.exhibitorTransitionToHome()
-                        case "visitor":
-                            self.userTransitionToHome()
-                            
-                        default:
-                            print("error, couldnt find role")
-                            
-                        }
-                    }
+                    
+                    self.TransitionToHome()
+                        
+                    
                 }
             }
             
         }
         
     }
-    
-}
-
-extension SignUpViewController : UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
-   func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Roles.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Roles[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         ChosedRole = Roles[row]
-        pickerTF.text = ChosedRole
-    }
-    func createPickerView() {
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        
-        pickerTF.inputView = pickerView
-    }
-    func dismissPickerView(){
-         let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        
-        let done = UIBarButtonItem(title: "done", style: .plain, target: self, action: #selector(self.dissmissKeyboard))
-        toolBar.setItems([done], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        pickerTF.inputAccessoryView = toolBar
-    }
-    @objc func dissmissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    
-    
     
 }

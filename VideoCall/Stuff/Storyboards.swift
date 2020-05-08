@@ -11,6 +11,5 @@ import Foundation
 struct Storyboards {
     struct Storyboard {
         static let ExhibitorHomeViewController = "ExhibitorHVC"
-        static let UserHomeViewController = "UserHVC"
     }
 }

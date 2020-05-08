@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the
-  }
+        
+        SetUpButtons()
+    }
+    func SetUpButtons(){
+       self.view.backgroundColor = UIColor.init(red: 3/255, green: 66/255, blue: 119/255, alpha: 1)
+        Utility.filledButton(LoginButton)
+        Utility.HollowButton(SignUpButton)
+    }
+    
 }
