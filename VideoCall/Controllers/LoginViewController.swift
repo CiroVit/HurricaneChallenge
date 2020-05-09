@@ -75,6 +75,7 @@ class LoginViewController: UIViewController {
             if error != nil {
                 self.ShowError("Wrong email or password")
             }else {
+                var currentUser = Auth.auth().currentUser
                 self.TransitionToHome()
                
             }

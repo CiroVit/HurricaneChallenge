@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -24,5 +26,20 @@ class ViewController: UIViewController {
         Utility.filledButton(LoginButton)
         Utility.HollowButton(SignUpButton)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        if Auth.auth().currentUser != nil {
+            TransitionToHome()
+        }else {
+            
+        }
+        
+    }
+    func TransitionToHome() {
+           let userHomeViewController =
+               storyboard?.instantiateViewController(identifier: Storyboards.Storyboard.TabBarViewController) as? TabBarViewController
+           
+           view.window?.rootViewController = userHomeViewController
+           view.window?.makeKeyAndVisible()
+       }
 }
